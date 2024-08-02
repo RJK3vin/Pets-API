@@ -2,7 +2,7 @@ from django.db import models
 
 PET_TYPES = [
     ('dog', 'dog'),('cat', 'cat'),('bird', 'bird'),('fish', 'fish'),('reptile', 'reptile'),
-    ('hamster', 'hamster'),
+    ('hamster', 'hamster'), ('bunny', 'bunny')
 ]
 
 class Pet(models.Model):
