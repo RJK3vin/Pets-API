@@ -19,4 +19,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('', include('petsapi.urls')),
+    path('api-auth/', include('rest_framework.urls')),
 ]
