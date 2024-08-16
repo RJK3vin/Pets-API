@@ -12,8 +12,8 @@ class PetSerializer(serializers.HyperlinkedModelSerializer):
 
 class CartSerializer(serializers.ModelSerializer):
     pets = PetSerializer(many=True, read_only=True)
-    
+
     class Meta:
         model = Cart
-        fields = ['id', 'user', 'pets']
+        fields = ['id', 'pets']
 
