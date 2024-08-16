@@ -15,6 +15,13 @@ class Pet(models.Model):
     description = models.CharField(max_length=300, blank = False, default='')
     pettype = models.CharField(choices=PET_TYPES, blank = False, default='', max_length = 100)
 
+class Cart(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    pets = models.ManyToManyField('Pet')
+
+    def __str__(self):
+        return f"{self.user.username}'s Cart"
+
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)
 def create_auth_token(sender, instance=None, created=False, **kwargs):
     if created:
