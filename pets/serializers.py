@@ -1,6 +1,13 @@
+from django.contrib.auth.models import User
 from rest_framework import serializers
 from petsapi.models import Pet
 from petsapi.models import Cart
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'email', 'cart']
 
 class PetSerializer(serializers.HyperlinkedModelSerializer):
 
