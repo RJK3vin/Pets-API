@@ -1,0 +1,17 @@
+# add pet to cart
+curl -X POST http://localhost:8080/carts/4/add_pet/ \
+-H "Content-Type: application/json" \
+-H "Authorization: Token bcd5ecc7e43c0f85cd0c81f7b99f3fd0bd587a1b" \
+-d '{"pet_id": 1}'
+x
+# check whats in cart
+curl -X GET http://localhost:8080/carts/4 \
+-H "Authorization: Token bcd5ecc7e43c0f85cd0c81f7b99f3fd0bd587a1b"
+
+# check whats in pet
+curl -X GET http://localhost:8080/pets/ \
+-H "Authorization: Token bcd5ecc7e43c0f85cd0c81f7b99f3fd0bd587a1b" | python3 -m json.tool
+
+# check id, username, email, cart
+curl -X GET http://localhost:8080/users/me/ \
+-H "Authorization: Token ccc0dd55eb28b457d46fefd4fa700690ee3c4794"
